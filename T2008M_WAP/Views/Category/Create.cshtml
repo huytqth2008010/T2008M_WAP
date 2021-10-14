@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+@model T2008M_WAP.Models.Category
+
+<div class="row d-flex justify-content-center">
+    <div class="col-lg-6">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Create a Category</h1>
+            </div>
+            <form class="user"
+                  @using (Html.BeginForm()) {<div class="form-group">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control form-control-user" } })
+                </div>
+                <button type="submit" class="btn btn-primary btn-user btn-block">Submit</button>
+                <a href="/Category/Index" style="color:white" class="btn btn-danger btn-user btn-block">Back to List</a>
+            }
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
